@@ -1,4 +1,3 @@
-import scala.Console.println
 import scala.io.StdIn.readLine
 
 object CountLetters extends App {
@@ -23,14 +22,16 @@ object CountLetters extends App {
   val numberOfCharacters = word.map(_.length)
   println(s"Word lengths:\n${numberOfCharacters.mkString(",")}")
 
- val numericMap = Map(word -> numberOfCharacters)
-  println(numericMap)
+ //val numericMap = Map(word -> numberOfCharacters)
+  //println(numericMap)
 
-  val mutMap = scala.collection.mutable.Map(word-> numberOfCharacters)
+  val mutMap = scala.collection.mutable.Map[Char, Int]()
+
+  for (c<-sentence) {
+    //println(s"$c")
+    mutMap += (c-> sentence.count(t => t ==c))
+
+  }
   println(mutMap)
-
-  val mySeq = Seq((word,numberOfCharacters))
-  val myMap = mySeq.toMap
-  println(myMap)
 
 }
