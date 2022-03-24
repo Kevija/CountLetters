@@ -23,9 +23,12 @@ object CountLetters extends App {
   val numberOfCharacters = word.map(_.length)
   println(s"Word lengths:\n${numberOfCharacters.mkString(",")}")
 
+<<<<<<< HEAD
  val numericMap = Map(word -> numberOfCharacters)
   println(numericMap)
 
+=======
+>>>>>>> origin/master
   val mutMap = scala.collection.mutable.Map(word-> numberOfCharacters)
   println(mutMap)
 
